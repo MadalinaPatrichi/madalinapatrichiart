@@ -1,24 +1,11 @@
-console.log('Try npm run lint/fix!');
+import express from 'express';
+const app = express();
+const port = 3000;
 
-const longString =
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut aliquet diam.';
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
 
-const trailing = 'Semicolon';
-
-const why = 'am I tabbed?';
-
-export function doSomeStuff(
-  withThis: string,
-  andThat: string,
-  andThose: string[]
-) {
-  //function on one line
-  if (!andThose.length) {
-    return false;
-  }
-  console.log(withThis);
-  console.log(andThat);
-  console.dir(andThose);
-  return;
-}
-// TODO: more examples
+app.listen(port, () => {
+  return console.log(`Express is listening at http://localhost:${port}`);
+});
